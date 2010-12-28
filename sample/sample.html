@@ -2,22 +2,23 @@
 
 <head>
 <!-- Load jQuery -->
-<script type="text/javascript" 
+<script type="text/javascript"
         src="http://www.google.com/jsapi"></script>
 <script type="text/javascript">
   google.load("jquery", "1.4.4");
- 
+
   function testingForJava( success ) {
   $('.doWeHaveJava').html( success ? 'We have java, hurray!' : 'Unfortunately java is not supported' );
   }
 
   google.setOnLoadCallback(function() {
-  $.hasJava( testingForJava );
+  // Second parameter is optional for classpath of java .class files, 
+  // but please store the applet on your site if possible (otherwise uses github's copy)
+  $.hasJava( testingForJava, '/jqueryhasjava' );
   });
 </script>
-<!-- Load hasJava --> 
-<!-- Please download this and host off your own server, be kind to github -->
-<script src="https://github.com/xrd/JqueryHasJava/raw/master/jquery.hasjava.js" type="text/javascript"></script>
+<!-- Load hasJava -->
+<script src="jquery.hasjava.js" type="text/javascript"></script>
 
 </head>
 
