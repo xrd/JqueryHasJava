@@ -5,3 +5,24 @@ of java so that you can choose before loading a larger applet.
 Why not just use the alternateHtml inside the <applet> tags?  Many webapps these days dynamically build the HTML, and this 
 does not give you much control over the presentation of the message.  I wanted a way to programmatically determine whether
 an applet can be loaded.
+
+Sample usage (live demo on http://vivoh.com/jqueryhasjava/sample/sample.html
+
+<html>
+<body>
+<script type="text/javascript">
+function testingForJava( success ) {
+  $('.doWeHaveJava').html( success ? 'We have java, hurray!' : 'Unfortunately java is not supported' );
+}
+
+google.setOnLoadCallback(function() {
+  // Second parameter is optional for classpath of java .class files,
+  // but please store the applet on your site if possible (otherwise uses github's copy)
+  $.hasJava( testingForJava, '/jqueryhasjava' );
+});
+</script>
+<div class="doWeHaveJava">
+Please wait, determining if we have java available
+</div>
+</body>
+</html>
