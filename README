@@ -1,12 +1,15 @@
-With Apple's recent decision to stop shipping java as a default, and the current state of the union on Windows, 
-you cannot rely on having java inside a browser.  This plugin gives you a simple interface to check for the existence
-of java so that you can choose before loading a larger applet.
+With Apple's recent decision to stop shipping java by default, and the current state of the union on Windows,
+where java is not installed by default either, you cannot rely on having java inside a browser.  This plugin 
+gives you a simple interface to check for the existence of java so that you can choose before loading a larger applet.
 
-Why not just use the alternateHtml inside the <applet> tags?  Many webapps these days dynamically build the HTML, and this 
-does not give you much control over the presentation of the message.  I wanted a way to programmatically determine whether
-an applet can be loaded.
+Why not just use the alternateHtml inside the <applet> tags?  Many webapps these days dynamically build HTML, and putting
+text inside the <applet> tags does not give you any control over the presentation of the message.  I am building a webapp
+where the applet itself is tiny and the UI is completely outside the applet in the HTML of the webpage.  Given all that, 
+I wanted a way to programmatically determine whether an applet can be loaded.
 
-Sample usage (live demo on http://vivoh.com/jqueryhasjava/sample/sample.html)
+Live demo: http://vivoh.com/jqueryhasjava/sample/sample.html
+
+Sample usage 
 
 <html>
 <body>
