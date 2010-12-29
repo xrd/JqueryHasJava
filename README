@@ -6,18 +6,22 @@ Why not just use the alternateHtml inside the <applet> tags?  Many webapps these
 does not give you much control over the presentation of the message.  I wanted a way to programmatically determine whether
 an applet can be loaded.
 
-Sample usage (live demo on http://vivoh.com/jqueryhasjava/sample/sample.html
+Sample usage (live demo on http://vivoh.com/jqueryhasjava/sample/sample.html)
 
 <html>
 <body>
+<script type="text/javascript"
+        src="http://www.google.com/jsapi"></script>
 <script type="text/javascript">
+google.load("jquery", "1.4.4");
+
 function testingForJava( success ) {
   $('.doWeHaveJava').html( success ? 'We have java, hurray!' : 'Unfortunately java is not supported' );
 }
 
 google.setOnLoadCallback(function() {
   // Second parameter is optional for classpath of java .class files,
-  // but please store the applet on your site if possible (otherwise uses github's copy)
+  // but please store the applet on your site if possible (otherwise it uses github's copy)
   $.hasJava( testingForJava, '/jqueryhasjava' );
 });
 </script>
