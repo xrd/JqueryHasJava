@@ -12,6 +12,7 @@
                 if( document.jqueryHasJava ) {
                     // great we have it, test to see if we can script it                                                                                                    
                     if( 'yes' == document.jqueryHasJava.yes() ) {
+                        waited = 11;
                         func( true );
                     }
                 }
@@ -22,8 +23,10 @@
             catch( err ) {
                 waited += 1;
             }
-          // try again                                                                                                                                              
-            setTimeout( function() { waitAgain( func ); }, 1000 );
+          // try again                                                                                                                        
+            if( waited < 10 ) {
+              setTimeout( function() { waitAgain( func ); }, 1000 );
+            }
         }
     };
 
